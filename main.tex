@@ -99,23 +99,39 @@ style=numeric,
     \end{itemize}  
 \end{frame}
 \begin{frame}{The Versatile Block}
-    The Versatile Block is a polyhedron embedded in $\R^3$, given by vertices $\{v_1,\ldots,v_9 \, \}$, edges
+    The Versatile Block is a polyhedron embedded in $\R^3$, given by \pause vertices 
+    $$B_0 \coloneqq \{v_1,\ldots,v_9 \, \},$$ \pause
+    edges
     \begin{align*}
-        \{  &\{ v_1, v_2 \},  \{ v_1, v_3 \},  \{ v_1, v_4 \}, \{ v_1, v_5 \}, \{ v_1, v_9 \},  \{ v_2, v_3 \}, \{ v_2, v_5 \}, \\
+        B_1 \coloneqq \{  &\{ v_1, v_2 \},  \{ v_1, v_3 \},  \{ v_1, v_4 \}, \{ v_1, v_5 \}, \{ v_1, v_9 \},  \{ v_2, v_3 \}, \{ v_2, v_5 \}, \\
         & \{ v_2, v_6 \},  \{ v_2, v_7 \},  \{ v_3, v_4 \},  \{ v_3, v_7 \},  \{ v_4, v_7 \}, \{ v_4, v_8 \}, \{ v_4, v_9 \},\\
         & \{ v_5, v_6 \}, \{ v_5, v_7 \},  \{ v_5, v_9 \}, \{ v_6, v_7 \},  \{ v_7, v_8 \},  \{ v_7, v_9 \},  \{ v_8, v_9 \}  \},
-    \end{align*} 
+    \end{align*} \pause
     and triangular faces
     \begin{align*}
-        \{& \{v_1, v_2, v_3\}, \{v_1, v_2, v_5\},  \{v_1, v_3, v_4\}, \{v_1, v_4, v_9\}, \{v_1, v_5, v_9\}, \{v_2, v_3, v_7\},  \{v_2, v_5, v_6\},\\
-        &\{v_2, v_6, v_7\},  \{v_3, v_4, v_7\},  \{v_4, v_7, v_8\},  \{v_4, v_8, v_9\},  \{v_5, v_6, v_7\},  \{v_5, v_7, v_9\}, \{v_7, v_8, v_9\}\}
+        B_2 \coloneqq \{& \{v_1, v_2, v_3\}, \{v_1, v_2, v_5\},  \{v_1, v_3, v_4\}, \{v_1, v_4, v_9\}, \{v_1, v_5, v_9\}, \\
+        &\{v_2, v_3, v_7\},  \{v_2, v_5, v_6\},\{v_2, v_6, v_7\},  \{v_3, v_4, v_7\},  \{v_4, v_7, v_8\},  \\
+        &\{v_4, v_8, v_9\},  \{v_5, v_6, v_7\},  \{v_5, v_7, v_9\}, \{v_7, v_8, v_9\}\}.
     \end{align*}
-    together with coordinates
-    \begin{alignat*}{3}
-    &v_1 = (0, 0, 0) , v_2 = (1, 1, 0) ,  v_3 = (2, 0, 0) , v_4 = (1, -1, 0) , \\
-    &v_5 = (0, 1, 1) ,  v_6 = (1, 1, 1) ,  v_7 = (1, 0, 1) , v_8 = (1, -1, 1) , v_9 = (0, -1, 1).
-    \end{alignat*} 
 \end{frame}
+
+\begin{frame}{The Versatile Block}
+    The Versatile Block is a polyhedron embedded in $\R^3$, given by $B_0, B_1, B_2$ together with coordinates
+    \begin{alignat*}{3}
+    &v_1 = (0, 0, 0) , v_2 = (1, 1, 0) ,  v_3 = (2, 0, 0) , \\
+    &v_4 = (1, -1, 0) , v_5 = (0, 1, 1) ,  v_6 = (1, 1, 1) ,  \\
+    &v_7 = (1, 0, 1) , v_8 = (1, -1, 1) , v_9 = (0, -1, 1).
+    \end{alignat*} 
+    \pause
+    \begin{center}    
+        \includegraphics[width=0.25\textwidth]{images/versatile-front.png}
+        \pause
+        \includegraphics[width=0.3\textwidth]{images/versatile-back.png}
+        \pause
+        \includegraphics[width=0.33\textwidth]{images/versatile-square.png}
+    \end{center}
+\end{frame}
+
 \begin{frame}{Wallpaper Groups}
 
 \end{frame}
