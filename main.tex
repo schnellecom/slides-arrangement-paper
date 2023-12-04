@@ -1,0 +1,92 @@
+\documentclass{beamer}
+\usepackage{graphicx} % Required for inserting images
+
+\usepackage[utf8]{inputenc}
+% \usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{microtype}
+\usepackage{ellipsis}
+%\usepackage[ngerman]{babel}
+\let\openbox\undefined
+\usepackage{mathtools}
+\usepackage{enumitem}
+\let\openbox\undefined
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{graphicx}
+\usepackage{stmaryrd}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{algpseudocode}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{url}
+\usepackage[
+backend=biber,
+style=numeric,
+]{biblatex}
+\addbibresource{./references.bib}
+\usepackage[normalem]{ulem}
+
+\declaretheoremstyle[
+    headpunct=,
+    spacebelow=2em,
+    spaceabove=1em,
+    postheadspace=\newline,
+    ]{aufgabe}
+\declaretheorem[style=aufgabe]{aufgabe}
+\numberwithin{equation}{aufgabe}
+\addtolength\jot{1ex}
+
+\newtheorem{proposition}{Proposition}
+\renewcommand\qedsymbol{$\square$}
+
+\newcommand\R{\mathbb R}
+\newcommand\Z{\mathbb Z}
+\newcommand\N{\mathbb N}
+\newcommand\C{\mathbb C}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\ass}{\underline{Assume:}  }
+\newcommand{\zz}{\underline{t.s.:}  }
+
+\usetheme[compress]{Berlin}
+\setbeamertemplate{footline}[frame number]{}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+
+\makeatletter
+\beamer@theme@subsectionfalse%
+\makeatother
+
+\title{Mechanical Comparison of Arrangement Strategies for Topological Interlocking Assemblies}
+\author{Lukas Schnelle}
+\date{Dec 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem statement}
+% \begin{frame}{An Example}
+%     \visible<2-4>{
+%     Let $\forall i \in [n]: a_i \in \R^1, b_i \in \R $ some data.\\
+%     \textbf{Goal:} Find $x \in \R$ s.th. $\only<3-4>{\textcolor{red}{min_{x\in \R}(ax - b)}} \only<2>{ax = -b}$}
+%     \only<1-3>{
+%     \begin{center}
+%         \includegraphics[width=0.6\textwidth]{images/pointplot.png}
+%     \end{center}
+%     }
+%     \only<4>{
+%     \begin{center}
+%         \includegraphics[width=0.6\textwidth]{images/lineplot.png}
+%     \end{center}
+%     }
+% \end{frame}
+\cite[Thm. 1]{bridges23}
+
+
+\newpage
+\printbibliography 
+
+\end{document}
