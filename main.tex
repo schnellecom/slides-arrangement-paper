@@ -10,7 +10,7 @@
 %\usepackage[ngerman]{babel}
 \let\openbox\undefined
 \usepackage{mathtools}
-\usepackage{enumitem}
+% \usepackage{enumitem}
 \let\openbox\undefined
 \usepackage{amsthm}
 \usepackage{thmtools}
@@ -27,6 +27,7 @@ style=numeric,
 ]{biblatex}
 \addbibresource{./references.bib}
 \usepackage[normalem]{ulem}
+\usepackage{xcolor}
 
 \declaretheoremstyle[
     headpunct=,
@@ -86,10 +87,34 @@ style=numeric,
 
 \section{Mathematics}
 \begin{frame}{Topological Interlocking}
-
+    \begin{definition}[Topological Interlocking]
+        A topological interlocking assembly can be defined as an arrangement of blocks that are in contact with each other together with a frame such that, if the frame is fixed, any non-empty finite subset of blocks of the arrangement is prevented from moving.
+    \end{definition}
+    \pause
+    \textbf{Here:} 
+    \begin{itemize}
+        \item planar topological interlocking assemblies, i.e. between two parallel planes in 3D-space,
+        \pause\item use perimeter as the frame,
+        \pause\item only copies of the same block differently arranged.
+    \end{itemize}  
 \end{frame}
 \begin{frame}{The Versatile Block}
-
+    The Versatile Block is a polyhedron embedded in $\R^3$, given by vertices $\{v_1,\ldots,v_9 \, \}$, edges
+    \begin{align*}
+        \{  &\{ v_1, v_2 \},  \{ v_1, v_3 \},  \{ v_1, v_4 \}, \{ v_1, v_5 \}, \{ v_1, v_9 \},  \{ v_2, v_3 \}, \{ v_2, v_5 \}, \\
+        & \{ v_2, v_6 \},  \{ v_2, v_7 \},  \{ v_3, v_4 \},  \{ v_3, v_7 \},  \{ v_4, v_7 \}, \{ v_4, v_8 \}, \{ v_4, v_9 \},\\
+        & \{ v_5, v_6 \}, \{ v_5, v_7 \},  \{ v_5, v_9 \}, \{ v_6, v_7 \},  \{ v_7, v_8 \},  \{ v_7, v_9 \},  \{ v_8, v_9 \}  \},
+    \end{align*} 
+    and triangular faces
+    \begin{align*}
+        \{& \{v_1, v_2, v_3\}, \{v_1, v_2, v_5\},  \{v_1, v_3, v_4\}, \{v_1, v_4, v_9\}, \{v_1, v_5, v_9\}, \{v_2, v_3, v_7\},  \{v_2, v_5, v_6\},\\
+        &\{v_2, v_6, v_7\},  \{v_3, v_4, v_7\},  \{v_4, v_7, v_8\},  \{v_4, v_8, v_9\},  \{v_5, v_6, v_7\},  \{v_5, v_7, v_9\}, \{v_7, v_8, v_9\}\}
+    \end{align*}
+    together with coordinates
+    \begin{alignat*}{3}
+    &v_1 = (0, 0, 0) , v_2 = (1, 1, 0) ,  v_3 = (2, 0, 0) , v_4 = (1, -1, 0) , \\
+    &v_5 = (0, 1, 1) ,  v_6 = (1, 1, 1) ,  v_7 = (1, 0, 1) , v_8 = (1, -1, 1) , v_9 = (0, -1, 1).
+    \end{alignat*} 
 \end{frame}
 \begin{frame}{Wallpaper Groups}
 
