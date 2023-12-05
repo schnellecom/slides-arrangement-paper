@@ -19,6 +19,7 @@
 \usepackage{graphicx}
 \usepackage{stmaryrd}
 \usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
 \usetikzlibrary{positioning}
 \usepackage{algpseudocode}
 \usepackage[absolute,overlay]{textpos}
@@ -31,6 +32,7 @@ isbn=false,
 \addbibresource{./references.bib}
 \usepackage[normalem]{ulem}
 \usepackage{xcolor}
+\usepackage{structmech}
 
 \declaretheoremstyle[
     headpunct=,
@@ -237,11 +239,51 @@ isbn=false,
 
 \section{Mechanics and Simulation}
 \begin{frame}{Problem statement}
-    
+    \begin{exampleblock}{Problem}
+        Do the $p1$, $pg$ and $p4$ assemblies perform differently when pressure is applied from one side?\\
+    \end{exampleblock}
+    \pause
+    Setup like this:\\
+    \includegraphics[width=0.8\textwidth]{images/setup-10x10.png}
 \end{frame}
 
 \begin{frame}{Finite Element Method}
-    
+    % \vspace*{-0.5cm}
+    How to answer such a question? \pause $\xrightarrow{}$ Finite Element Method\\
+    For now, let us switch to the $\R^2$ case.\\ \pause
+    \textbf{Note:} in $\R^2$ there are two (linearly independent) directions of movement and one rotation that classify all movements.
+    \pause
+    \begin{definition}[Beam]
+        A beam is a body in the shape of a cuboid in $\R^2$ that has one dimension much larger than the other two.
+    \end{definition}
+    \pause
+    \begin{definition}[Supports]
+        \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \begin{tikzpicture}
+                \draw[line width=0.5mm] (0,0) -- (2,0);
+                \FixedSupport[270]{0,0}{1.5}
+            \end{tikzpicture}\\
+            No rotation or translation.
+        \end{column}
+        \pause
+        \begin{column}{0.5\textwidth}
+            \begin{tikzpicture}
+                \node[draw=none] at (2,0.1) {};
+                \draw[line width=0.5mm] (0,0) -- (2,0);
+                \node[isosceles triangle,
+                    isosceles triangle apex angle=60,
+                    draw,
+                    rotate=90,
+                    thick,
+                    minimum size =1cm] (T2)at (2,-0.7){};
+                \draw[line width=0.5mm] (1.4,-1.1) -- (2.6,-1.1);
+            \end{tikzpicture}\\
+            Only movement in direction of line below triangle and rotation.
+        \end{column}
+        \end{columns}
+    \end{definition}
+
 \end{frame}
 
 \begin{frame}{Problem formulation}
