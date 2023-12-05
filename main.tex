@@ -51,6 +51,9 @@ style=numeric,
 \newcommand{\ass}{\underline{Assume:}  }
 \newcommand{\zz}{\underline{t.s.:}  }
 
+\renewcommand{\phi}{\varphi}
+\renewcommand{\epsilon}{\varepsilon}
+
 \usetheme[compress]{Berlin}
 \setbeamertemplate{footline}[frame number]{}
 \setbeamertemplate{navigation symbols}{}
@@ -132,8 +135,29 @@ style=numeric,
     \end{center}
 \end{frame}
 
+\begin{frame}{Isometries}
+    \begin{definition}
+        Let $n \in \N$, $V$ a euclidean $K$ vectorspace (with metric $d: V \times V \to K$).
+        Then $\phi: V \to V$ is called an \emph{isometry} if 
+        $$
+            \forall x, y \in V : d(x, y) = d(\phi(x), \phi(y)).
+        $$
+    \end{definition}
+    \textbf{Note:} An isometry is always a combination of an affine transformation and an orthogonal matrix. Such an isometry $\phi = (A, a)$ operates as 
+    $$
+        (A, a)(x) \coloneqq A \cdot x + a.
+    $$
+    The isometries of a given euclidean vectorspace are a group with the operation 
+    $$
+        \left( (A, a) \circ (B, b) \right) (x) \coloneqq (A \cdot B, A\cdot a + b)
+    $$
+    denoted by $E(n)$.
+\end{frame}
 \begin{frame}{Wallpaper Groups}
-
+    \begin{definition}{Crystallograhpic/Wallpaper Groups}
+        Let $\Gamma \leq E(n)$ a subgroup of the group of isometries of dimension $n$.\\
+        Then $\Gamma$ is called a crystallographic group if $\Gamma$ is cocompact and discrete.
+    \end{definition}
 \end{frame}
 \begin{frame}{Planar Assemblies of the Versatile Block}
 
