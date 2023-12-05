@@ -196,11 +196,50 @@ isbn=false,
     \end{alignat*}
 \end{frame}
 
-\begin{frame}{Planar Assemblies of the Versatile Block}
+\begin{frame}{crystallographic groups on the Versatile Block}
+    \begin{center}    
+        \includegraphics[width=0.25\textwidth]{images/versatile-front.png}
+        \includegraphics[width=0.3\textwidth]{images/versatile-back.png}
+        \includegraphics[width=0.33\textwidth]{images/versatile-square.png}
+    \end{center}
+    \pause
+    \textbf{Notice:} Versatile Block has only vertices with $z=0$ and $z=1$.
+    Now consider the an isometry $\phi$ from before lifted to $\R^3$ by
+    $$
+    \hat \phi : \R^3 \to \R^3, \begin{pmatrix}x \\ y \\ z \end{pmatrix} \mapsto  \begin{pmatrix} \phi \begin{pmatrix}x \\ y \end{pmatrix} \\ z \end{pmatrix}
+    $$
+    Applied to all coordinates of the vertices of the Versatile Block we get a Versatile Block between the same planes.
+\end{frame}
 
+\begin{frame}{Planar Assemblies of the Versatile Block}
+    With the groups $p1$, $pg$ and $p4$ from before we get three interlocking assemblies consisting only of copies of the Versatile Block:\\
+    \begin{center}
+        \only<1-2>{
+            \includegraphics[width=0.4\textwidth]{images/p1-rect.png}
+            \onslide<2>{
+                \includegraphics[width=0.5\textwidth]{images/p1.png}
+            }
+        }
+        \only<3-4>{
+            \includegraphics[width=0.4\textwidth]{images/pg-rect.png}
+            \onslide<4>{
+                \includegraphics[width=0.5\textwidth]{images/pg.png}
+            }
+        }
+        \only<5-6>{
+            \includegraphics[width=0.4\textwidth]{images/p4-rect.png}
+            \onslide<6>{
+                \includegraphics[width=0.5\textwidth]{images/p4.png}
+            }
+        }
+    \end{center}
 \end{frame}
 
 \section{Mechanics and Simulation}
+\begin{frame}{Problem statement}
+    
+\end{frame}
+
 \begin{frame}{Finite Element Method}
     
 \end{frame}
