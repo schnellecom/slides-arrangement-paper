@@ -11,7 +11,9 @@
 \let\openbox\undefined
 \usepackage{mathtools}
 % \usepackage{enumitem}
-\let\openbox\undefined
+% \setbeamertemplate{itemize items}
+% \setbeamertemplate{enumerate item}{(\roman{enumi})}
+% \let\openbox\undefined
 \usepackage{amsthm}
 \usepackage{thmtools}
 \usepackage{graphicx}
@@ -24,6 +26,7 @@
 \usepackage[
 backend=biber,
 style=numeric,
+isbn=false,
 ]{biblatex}
 \addbibresource{./references.bib}
 \usepackage[normalem]{ulem}
@@ -137,28 +140,62 @@ style=numeric,
 
 \begin{frame}{Isometries}
     \begin{definition}
-        Let $n \in \N$, $V$ a euclidean $K$ vectorspace (with metric $d: V \times V \to K$).
-        Then $\phi: V \to V$ is called an \emph{isometry} if 
+        Let $n \in \N$, $V$ an euclidean $K$ vectorspace (with metric $d: V \times V \to K$).
+        Then $\phi: V \to V$ is called an \emph{isometry} if \pause
         $$
             \forall x, y \in V : d(x, y) = d(\phi(x), \phi(y)).
         $$
     \end{definition}
+    \pause
     \textbf{Note:} An isometry is always a combination of an affine transformation and an orthogonal matrix. Such an isometry $\phi = (A, a)$ operates as 
     $$
         (A, a)(x) \coloneqq A \cdot x + a.
     $$
+    \pause
     The isometries of a given euclidean vectorspace are a group with the operation 
     $$
         \left( (A, a) \circ (B, b) \right) (x) \coloneqq (A \cdot B, A\cdot a + b)
     $$
-    denoted by $E(n)$.
+    denoted by $E(n)$ \pause ($ \implies E(n) = O(n) \ltimes \R^n$).
 \end{frame}
 \begin{frame}{Wallpaper Groups}
     \begin{definition}{Crystallograhpic/Wallpaper Groups}
         Let $\Gamma \leq E(n)$ a subgroup of the group of isometries of dimension $n$.\\
-        Then $\Gamma$ is called a crystallographic group if $\Gamma$ is cocompact and discrete.
+        Then $\Gamma$ is called \emph{crystallographic group} if $\Gamma$ is cocompact and discrete, it is called \emph{wallpaper group} if $n=2$.
     \end{definition}
+    \pause
+    \begin{definition}
+        Let $\Gamma \leq E(n)$. \\
+        Then $\Gamma$ is cocompact if the space $E(n) / \Gamma$ is compact.
+    \end{definition}
+    \pause
+    \begin{block}{Proposition (\cite[Prop. 1.9]{szczepanski2012geometry})}
+        Let $\Gamma \leq E(n)$. \\
+        Then $E(n)/\Gamma$ is compact iff the orbit space $\R^n / \Gamma$ is compact.
+    \end{block}
 \end{frame}
+
+\begin{frame}{Examples of wallpaper groups}
+    \vspace{-3em}
+    \begin{alignat*}{2}
+    \action<+->{
+    &p1 \coloneqq \\
+    &\left< 
+        \left( \begin{pmatrix} 1 &0 \\ 0 &1\end{pmatrix}, \begin{pmatrix} 1 \\ -1 \end{pmatrix}\right), 
+        \left( \begin{pmatrix} 1 &0 \\ 0 &1\end{pmatrix}, \begin{pmatrix} 1 \\ 1 \end{pmatrix}\right) \right> \\ }
+    \action<+->{
+    &pg \coloneqq \\
+    &\left< 
+        \left( \begin{pmatrix} 0 &-1 \\ -1 &0\end{pmatrix}, \begin{pmatrix} 2 \\ 0 \end{pmatrix}\right), 
+        \left( \begin{pmatrix} 1 &0 \\ 0 &1\end{pmatrix}, \begin{pmatrix} 1 \\ 1 \end{pmatrix}\right) \right> \\ }
+    \action<+->{
+    &p4 \coloneqq \\
+    &\left< 
+        \left( \begin{pmatrix} 0 &1 \\ -1 &0\end{pmatrix}, \begin{pmatrix} 0 \\ 2 \end{pmatrix}\right), 
+        \left( \begin{pmatrix} 0 &-1 \\ 1 &0\end{pmatrix}, \begin{pmatrix} 0 \\ -2 \end{pmatrix}\right),\left( \begin{pmatrix} -1 &0 \\ 0 &-1\end{pmatrix}, \begin{pmatrix} 0 \\ 0 \end{pmatrix}\right) \right>}
+    \end{alignat*}
+\end{frame}
+
 \begin{frame}{Planar Assemblies of the Versatile Block}
 
 \end{frame}
