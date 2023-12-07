@@ -28,6 +28,7 @@
 backend=biber,
 style=numeric,
 isbn=false,
+url=false,
 ]{biblatex}
 \addbibresource{./references.bib}
 \usepackage[normalem]{ulem}
@@ -308,6 +309,15 @@ isbn=false,
     Run simulation
 \end{frame}
 
+\begin{frame}{Finite Element Method}
+    \begin{enumerate}
+        \item Discretization \pause
+        \item Divide and conquer \pause
+        \item Elementary transfer \pause
+        \item Make an Ansatz
+    \end{enumerate}
+\end{frame}
+
 \subsection{Simulation Results}
 \begin{frame}{Stresses}
     \includegraphics[width=0.9\textwidth]{images/Sm.png}
@@ -335,7 +345,7 @@ isbn=false,
         The adjacency matrix is defined as \pause
         $$v(i\to j) \coloneqq 
             \begin{cases}
-                0               & \text{if } (i,j) \notin A(\mathcal{G}(A,d))\\
+                0               & \text{if } (i,j) \notin \mathcal{G}(A,d)\\
                 \frac{1}{2},    & \text{if } i\neq j,\\
                 1,              & \text{if } i=j.
             \end{cases}$$
@@ -344,22 +354,56 @@ isbn=false,
     \pause
     Can be viewed as a weighted \emph{adjacency matrix} of $\mathcal{G}$ yielding a flow network with capacity function $v$.
     \pause
-    Let $x \in \R^100$ a load vector with the amount of force applied to block $i$ in $x_i$.\\
-    Then for $k$ high enough $A^k \cdot x$ yields the amount of load transfered to the frame.
+    Let $x \in \R^{100}$ a load vector with the amount of force applied to block $i$ in $x_i$.\\
+    For $k$ high enough $A^k \cdot x$ yields the amount of load transferred into the frame.
 \end{frame}
 
 \begin{frame}{Combinatorial Results}
-    
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{images/flowp1.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Combinatorial Results}
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{images/p1-result.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Combinatorial Results}
+    \begin{center}
+        \includegraphics[width=0.85\textwidth]{images/stress-p1-presentation-top.png}
+    \end{center}
 \end{frame}
 
 \section{Outlook}
-
 \begin{frame}
-    
+    \begin{exampleblock}{Takeaway}
+        The arrangement of a topological Interlocking has a profound influence on the mechanical performance.        
+    \end{exampleblock}
+    \pause
+    Assumptions made:
+    \begin{itemize}
+        \item Satisfy a wallpaper group \only<8->{$\xrightarrow{}$General Interlocking Assemblies}
+        \pause
+        \item Made from Versatile block \only<9->{$\xrightarrow{}$Made from other blocks}
+        \pause
+        \item Simulations  without friction \only<10->{$\xrightarrow{}$Consider friction}
+    \end{itemize}
+    \pause
+    Future work:
+    \begin{itemize}
+        \item Reduced corners as they often have stress spikes
+        \pause
+        \item Distance of top and bottom planes
+        \pause
+        \item Hollow blocks
+    \end{itemize}
 \end{frame}
 
 \appendix
 \begin{frame}    
+    Thank you for your attention \bigskip
 \printbibliography 
 \end{frame}
 
