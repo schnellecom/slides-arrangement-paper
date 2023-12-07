@@ -70,33 +70,18 @@ url=false,
 \makeatother
 
 \title{Mechanical Comparison of Arrangement Strategies for Topological Interlocking Assemblies}
-\author{Lukas Schnelle}
+\author{Lukas Schnelle \\
+This is joint work with Tom Goertzen, Domen Macek, Meike Weiß, Stefanie Reese, Hagen Holthusen and Alice C. Niemeyer \\
+Based on \cite{assemblies2023}}
 \date{Dec 2023}
 
 \begin{document}
 
 \maketitle
 
-% \section{Problem statement}
-% \begin{frame}{An Example}
-%     \visible<2-4>{
-%     Let $\forall i \in [n]: a_i \in \R^1, b_i \in \R $ some data.\\
-%     \textbf{Goal:} Find $x \in \R$ s.th. $\only<3-4>{\textcolor{red}{min_{x\in \R}(ax - b)}} \only<2>{ax = -b}$}
-%     \only<1-3>{
-%     \begin{center}
-%         \includegraphics[width=0.6\textwidth]{images/pointplot.png}
-%     \end{center}
-%     }
-%     \only<4>{
-%     \begin{center}
-%         \includegraphics[width=0.6\textwidth]{images/lineplot.png}
-%     \end{center}
-%     }
-% \end{frame}
-
 \section{Mathematics}
 \begin{frame}{Topological Interlocking}
-    \begin{definition}[Topological Interlocking]
+    \begin{definition}[Topological interlocking assembly]
         A topological interlocking assembly can be defined as an arrangement of blocks that are in contact with each other together with a frame such that, if the frame is fixed, any non-empty finite subset of blocks of the arrangement is prevented from moving.
     \end{definition}
     \pause
@@ -125,7 +110,7 @@ url=false,
 \end{frame}
 
 \begin{frame}{The Versatile Block}
-    The Versatile Block is a polyhedron embedded in $\R^3$, given by $B_0, B_1, B_2$ together with coordinates
+    The Versatile Block is a polyhedron embedded in $\R^3$, given by $B_0, B_1, B_2$ together with coordinates as in \cite{bridges23}
     \begin{alignat*}{3}
     &v_1 = (0, 0, 0) , v_2 = (1, 1, 0) ,  v_3 = (2, 0, 0) , \\
     &v_4 = (1, -1, 0) , v_5 = (0, 1, 1) ,  v_6 = (1, 1, 1) ,  \\
@@ -134,9 +119,7 @@ url=false,
     \pause
     \begin{center}    
         \includegraphics[width=0.25\textwidth]{images/versatile-front.png}
-        \pause
         \includegraphics[width=0.3\textwidth]{images/versatile-back.png}
-        \pause
         \includegraphics[width=0.33\textwidth]{images/versatile-square.png}
     \end{center}
 \end{frame}
@@ -155,20 +138,20 @@ url=false,
         (A, a)(x) \coloneqq A \cdot x + a.
     $$
     \pause
-    The isometries of a given euclidean vectorspace are a group with the operation 
+    The isometries of a given euclidean vectorspace are a group with the concatenation 
     $$
         \left( (A, a) \circ (B, b) \right) (x) \coloneqq (A \cdot B, A\cdot a + b)
     $$
     denoted by $E(n)$ \pause ($ \implies E(n) = O(n) \ltimes \R^n$).
 \end{frame}
 \begin{frame}{Wallpaper Groups}
-    \begin{definition}{Crystallograhpic/Wallpaper Groups}
+    \begin{definition}[Crystallographic/Wallpaper Groups]
         Let $\Gamma \leq E(n)$ a subgroup of the group of isometries of dimension $n$.\\
-        Then $\Gamma$ is called \emph{crystallographic group} if $\Gamma$ is cocompact and discrete, it is called \emph{wallpaper group} if $n=2$.
+        Then $\Gamma$ is called \emph{crystallographic group} if $\Gamma$ is cocompact and discrete, \pause it is called \emph{wallpaper group} if $n=2$.
     \end{definition}
     \pause
     \begin{definition}
-        Let $\Gamma \leq E(n)$. \\
+        Let $\Gamma \leq E(n)$. \\ \pause
         Then $\Gamma$ is cocompact if the space $E(n) / \Gamma$ is compact.
     \end{definition}
     \pause
@@ -210,7 +193,7 @@ url=false,
     Now consider the an isometry $\phi$ from before lifted to $\R^3$ by
     $$
     \hat \phi : \R^3 \to \R^3, \begin{pmatrix}x \\ y \\ z \end{pmatrix} \mapsto  \begin{pmatrix} \phi \begin{pmatrix}x \\ y \end{pmatrix} \\ z \end{pmatrix}
-    $$
+    $$ \pause
     Applied to all coordinates of the vertices of the Versatile Block we get a Versatile Block between the same planes.
 \end{frame}
 
@@ -222,18 +205,27 @@ url=false,
             \onslide<2>{
                 \includegraphics[width=0.5\textwidth]{images/p1.png}
             }
+            \\ \begin{center}
+                $p1$
+            \end{center}
         }
         \only<3-4>{
             \includegraphics[width=0.4\textwidth]{images/pg-rect.png}
             \onslide<4>{
                 \includegraphics[width=0.5\textwidth]{images/pg.png}
             }
+            \\ \begin{center}
+                $pg$
+            \end{center}
         }
         \only<5-6>{
             \includegraphics[width=0.4\textwidth]{images/p4-rect.png}
             \onslide<6>{
                 \includegraphics[width=0.5\textwidth]{images/p4.png}
             }
+            \\ \begin{center}
+                $p4$
+            \end{center}
         }
     \end{center}
 \end{frame}
@@ -241,7 +233,7 @@ url=false,
 \section{Mechanics and Simulation}
 \begin{frame}{Problem statement}
     \begin{exampleblock}{Problem}
-        Do the $p1$, $pg$ and $p4$ assemblies perform differently when pressure is applied from one side?\\
+        Do the $p1$, $pg$ and $p4$ assemblies perform mechanically differently when pressure is applied from one side?\\
     \end{exampleblock}
     \pause
     Setup like this:\\
@@ -250,7 +242,7 @@ url=false,
 
 \begin{frame}{Finite Element Method}
     % \vspace*{-0.5cm}
-    How to answer such a question? \pause $\xrightarrow{}$ Finite Element Method\\
+    How to answer such a question? \pause $\xrightarrow{}$ Finite Element Method\\ \pause
     For now, let us switch to the $\R^2$ case.\\ \pause
     \textbf{Note:} in $\R^2$ there are two (linearly independent) directions of movement and one rotation that classify all movements.
     \pause
@@ -295,6 +287,20 @@ url=false,
 
 \end{frame}
 
+\begin{frame}{Finite Element Method}
+    Assumption: Nodes at beams only move in direction of the beam and rotate. \pause
+    \begin{enumerate}
+        \item Discretization \\ \pause
+        Goal: find out how every node is moving in response to the forces applied \pause
+        \item Divide and conquer \\ \pause
+        There is a possibility to combine the elementary stiffness matrices into a global stiffness matrix \pause
+        \item Make an Ansatz \pause
+        \item Elementary transfer \\ \pause
+        Solve remaining unknowns with principle of minimum potential. \\
+        E.g. priciple of virtual work
+    \end{enumerate}
+\end{frame}
+
 \begin{frame}{Simulation workflow}
     Generate geometries in GAP\\
     \pause $\downarrow$\\
@@ -307,15 +313,6 @@ url=false,
     Set parameters accordingly\\
     \pause $\downarrow$\\
     Run simulation
-\end{frame}
-
-\begin{frame}{Finite Element Method}
-    \begin{enumerate}
-        \item Discretization \pause
-        \item Divide and conquer \pause
-        \item Elementary transfer \pause
-        \item Make an Ansatz
-    \end{enumerate}
 \end{frame}
 
 \subsection{Simulation Results}
@@ -341,8 +338,8 @@ url=false,
 
 \begin{frame}{Combinatorial Method}
     \begin{definition}
-        Let $\mathcal{G}(A,d)$ a directional blocking graph of an assembly as before.\\
-        The adjacency matrix is defined as \pause
+        Let $\mathcal{G}(A,d)$ a directional blocking graph of an assembly as before, $i,j \in I$.\\
+        Define \pause
         $$v(i\to j) \coloneqq 
             \begin{cases}
                 0               & \text{if } (i,j) \notin \mathcal{G}(A,d)\\
@@ -354,7 +351,7 @@ url=false,
     \pause
     Can be viewed as a weighted \emph{adjacency matrix} of $\mathcal{G}$ yielding a flow network with capacity function $v$.
     \pause
-    Let $x \in \R^{100}$ a load vector with the amount of force applied to block $i$ in $x_i$.\\
+    Let $x \in \R^{100}$ a load vector with the amount of force applied to block $i$ in $x_i$.\\ \pause
     For $k$ high enough $A^k \cdot x$ yields the amount of load transferred into the frame.
 \end{frame}
 
@@ -379,16 +376,16 @@ url=false,
 \section{Outlook}
 \begin{frame}
     \begin{exampleblock}{Takeaway}
-        The arrangement of a topological Interlocking has a profound influence on the mechanical performance.        
+        The arrangement of a topological Interlocking has a high influence on the mechanical performance.
     \end{exampleblock}
     \pause
     Assumptions made:
     \begin{itemize}
-        \item Satisfy a wallpaper group \only<8->{$\xrightarrow{}$General Interlocking Assemblies}
+        \item Satisfy a wallpaper group \pause$\xrightarrow{}$General Interlocking Assemblies
         \pause
-        \item Made from Versatile block \only<9->{$\xrightarrow{}$Made from other blocks}
+        \item Made from Versatile block \pause $\xrightarrow{}$Made from other blocks
         \pause
-        \item Simulations  without friction \only<10->{$\xrightarrow{}$Consider friction}
+        \item Simulations  without friction \pause $\xrightarrow{}$Consider friction
     \end{itemize}
     \pause
     Future work:
@@ -404,7 +401,7 @@ url=false,
 \appendix
 \begin{frame}    
     Thank you for your attention \bigskip
-\printbibliography 
+    \printbibliography 
 \end{frame}
 
 \end{document}
