@@ -285,7 +285,7 @@ isbn=false,
         \begin{column}{0.3\textwidth}
             \begin{tikzpicture}
                 \draw[line width=0.5mm] (0,0) -- (2,0);
-                \HingeSupport[0]{2,0}{2}
+                \HingeSupport[0]{2,0}{2.5}
             \end{tikzpicture}\\
             Only rotation, no translation.
         \end{column}
@@ -294,22 +294,58 @@ isbn=false,
 
 \end{frame}
 
-\begin{frame}{Problem formulation}
-
-\end{frame}
-
-\begin{frame}{Simulation Setup}
-    
+\begin{frame}{Simulation workflow}
+    Generate geometries in GAP\\
+    \pause $\downarrow$\\
+    Generate .stl files from the geometries\\
+    \pause $\downarrow$\\
+    Convert to .step files \\
+    \pause $\downarrow$\\
+    Import to Abaqus\\
+    \pause $\downarrow$\\
+    Set parameters accordingly\\
+    \pause $\downarrow$\\
+    Run simulation
 \end{frame}
 
 \subsection{Simulation Results}
 \begin{frame}{Stresses}
-    
+    \includegraphics[width=0.9\textwidth]{images/Sm.png}
+\end{frame}
+
+\begin{frame}{Deformations}
+    \includegraphics[width=0.9\textwidth]{images/u3.png}
 \end{frame}
 
 \section{Interlocking Flows}
 \begin{frame}{Combinatorial Method}
-    
+    \begin{definition}
+        Let $A=\{ X_i \mid i\in I\}$, a topological interlocking assembly consisting of blocks $X_i\subset \R^3$ indexed by a finite index set $I$ with a frame indexed by $J\subset I$, the core indexed by $C \coloneqq I \setminus J$ and $d\in \R^3$ a vector.\\ \pause
+        The \emph{Directional Blocking Graph} $\mathcal{G}(A,d)$ is defined as the directed graph with \pause
+        \begin{itemize}
+           \item vertices $I$ and \pause
+           \item arcs $i\to j$ if $X_i$ is restrained by $X_j$ in direction $d$ for $i,j\in I$.
+        \end{itemize}
+    \end{definition}
+\end{frame}
+
+\begin{frame}{Combinatorial Method}
+    \begin{definition}
+        Let $\mathcal{G}(A,d)$ a directional blocking graph of an assembly as before.\\
+        The adjacency matrix is defined as \pause
+        $$v(i\to j) \coloneqq 
+            \begin{cases}
+                0               & \text{if } (i,j) \notin A(\mathcal{G}(A,d))\\
+                \frac{1}{2},    & \text{if } i\neq j,\\
+                1,              & \text{if } i=j.
+            \end{cases}$$
+        so a block divides the load between the two neighbors of it if it is in the core.
+    \end{definition}
+    \pause
+    Can be viewed as a weighted \emph{adjacency matrix} of $\mathcal{G}$ yielding a flow network with capacity function $v$.
+    \pause
+    Let $x \in \R^100$ a load vector with the amount of force applied to block $i$ in $x_i$.\\
+    Then for $k$ high enough $A^k \cdot x$ yields the amount of load transfered to the frame.
 \end{frame}
 
 \begin{frame}{Combinatorial Results}
