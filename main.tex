@@ -142,11 +142,11 @@ Based on \cite{assemblies2023}}
     $$
         \left( (A, a) \circ (B, b) \right) (x) \coloneqq (A \cdot B, A\cdot a + b)
     $$
-    denoted by $E(n)$ \pause ($ \implies E(n) = O(n) \ltimes \R^n$).
+    denoted by $E(n)$ ($ \implies E(n) = O(n) \ltimes \R^n$).
 \end{frame}
 \begin{frame}{Wallpaper Groups}
-    \begin{definition}[Crystallographic/Wallpaper Groups]
-        Let $\Gamma \leq E(n)$ a subgroup of the group of isometries of dimension $n$.\\
+    \begin{definition}[Crystallographic/Wallpaper Group]
+        Let $\Gamma \leq E(n)$ a subgroup of the group of isometries of dimension $n$.\\ \pause
         Then $\Gamma$ is called \emph{crystallographic group} if $\Gamma$ is cocompact and discrete, \pause it is called \emph{wallpaper group} if $n=2$.
     \end{definition}
     \pause
@@ -154,10 +154,38 @@ Based on \cite{assemblies2023}}
         Let $\Gamma \leq E(n)$. \\ \pause
         Then $\Gamma$ is cocompact if the space $E(n) / \Gamma$ is compact.
     \end{definition}
+\end{frame}
+
+\begin{frame}{Wallpaper Groups}
+    \begin{definition}
+        Let $\langle (A_i, a_i) \rangle_{i \in I} \leq E(n)$ a crystallographic group. \\ \pause
+        Then 
+        $$
+            \left\{  \sum_{i \in I} b_i a_i \mid \forall i \in I : b_i \in \R, 0 \leq b_i \leq 1 \right\}
+        $$
+        is called the translation lattice.
+    \end{definition}
     \pause
-    \begin{block}{Proposition (\cite[Prop. 1.9]{szczepanski2012geometry})}
-        Let $\Gamma \leq E(n)$. \\
-        Then $E(n)/\Gamma$ is compact iff the orbit space $\R^n / \Gamma$ is compact.
+    \begin{definition}
+        Let $\Gamma \leq E(n)$ a crystallographic group, $F \subseteq \R^n$ closed, $F^\circ = F \setminus \delta F$ the inner of $F$. \\ \pause
+        Then $F$ is called fundamental domain if $\exists F^\circ \subseteq V \subseteq F$ set of representatives for the orbits of $\Gamma$.
+    \end{definition}
+    \pause
+    The translation lattice is always a fundamental domain.
+\end{frame}
+
+\begin{frame}{Bieberbach theorems}
+    \begin{block}{Theorem (1. Bieberbach) \cite[Satz 1.3]{plesken2014}}
+        Let $\Gamma \leq E(n)$ a crystallographic group of dimension $n$. \\ \pause
+        Then $\Gamma$ has $n$ linearly independent translations.
+    \end{block}
+    \pause
+    \begin{block}{Theorem (2. Bieberbach) \cite[Satz 1.5]{plesken2014}}
+        Up to isomorphism there are only finitely many crystallographic groups in $E(n)$.
+    \end{block}
+    \pause 
+    \begin{block}{Theorem (3. Bieberbach) \cite[Satz 1.6]{plesken2014}}
+        An isomorphism between two crystallographic groups in $E(n)$ is induced by conjugation with an affine map.
     \end{block}
 \end{frame}
 
