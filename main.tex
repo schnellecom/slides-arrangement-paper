@@ -259,7 +259,7 @@ isbn=false,
     \pause
     \begin{definition}[Supports]
         \begin{columns}
-        \begin{column}{0.4\textwidth}
+        \begin{column}{0.21\textwidth}
             \begin{tikzpicture}
                 \draw[line width=0.5mm] (0,0) -- (2,0);
                 \FixedSupport[270]{0,0}{1.5}
@@ -267,7 +267,7 @@ isbn=false,
             No rotation or translation.
         \end{column}
         \pause
-        \begin{column}{0.5\textwidth}
+        \begin{column}{0.3\textwidth}
             \begin{tikzpicture}
                 \node[draw=none] at (2,0.1) {};
                 \draw[line width=0.5mm] (0,0) -- (2,0);
@@ -275,11 +275,19 @@ isbn=false,
                     isosceles triangle apex angle=60,
                     draw,
                     rotate=90,
-                    thick,
+                    line width =0.5mm,
                     minimum size =1cm] (T2)at (2,-0.7){};
                 \draw[line width=0.5mm] (1.4,-1.1) -- (2.6,-1.1);
             \end{tikzpicture}\\
-            Only movement in direction of line below triangle and rotation.
+            Only translation in one direction and rotation.
+        \end{column}
+        \pause
+        \begin{column}{0.3\textwidth}
+            \begin{tikzpicture}
+                \draw[line width=0.5mm] (0,0) -- (2,0);
+                \HingeSupport[0]{2,0}{2}
+            \end{tikzpicture}\\
+            Only rotation, no translation.
         \end{column}
         \end{columns}
     \end{definition}
